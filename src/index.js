@@ -4,7 +4,7 @@ import {CardList} from './js/CardList.js';
 import {UserInfo} from './js/UserInfo.js';
 import {Popup} from './js/Popup.js';
 import {Card} from './js/Card.js';
-console.log(NODE_ENV);
+import {FormValidator} from './js/FormValidator.js';
 
 const api = new Api({
     baseUrl: NODE_ENV==='development' ? 'http://praktikum.tk/cohort8' : 'https://praktikum.tk/cohort8',

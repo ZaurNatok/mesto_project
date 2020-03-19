@@ -5,7 +5,6 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // добавили плагин
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
-console.log(isDev);
 
 module.exports = {
   entry: { main: './src/index.js' },
