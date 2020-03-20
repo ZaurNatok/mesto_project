@@ -1,0 +1,55 @@
+.filter__functions {
+    font-size: 8px;
+}
+
+.filter {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background: #222;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.filter__button {
+    background: #222;
+    border: solid 1px #eee;
+    color:#fff;
+    font-size: 10px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filter__button:focus {
+    outline: none;
+}
+
+.filter__button:hover {
+    background: black;
+}
+
+.filter__find {
+    background: #222;
+    border: solid 1px #eee;
+    color:#fff;
+    font-size: 10px;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.filter__find:focus {
+    outline: none;
+    background: black;
+}
+
+.filter__count {
+    color: #fff;
+    font-size: 8px;
+}

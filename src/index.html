@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+  <html lang="ru">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <title>Mesto</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+
+</head>
+
+<body>
+  <div class="loader">
+    <div class="loader__circle"></div>
+  </div>
+
+  <div class="root">
+    <header class="header root__section">
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
+    </header>
+    
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo">
+          <div class="user-info__cover"></div>
+        </div>
+        
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="user-info__edit-button open-popup">Edit</button>
+        </div>
+        <button class="button user-info__button open-popup">+</button>
+      </div>
+    </div>
+
+    <div class="filter">
+      <div class="filter__functions">
+          <button class="filter__button filter__button_sort">&uarr;</button>
+          <button class="filter__button filter__button_sortReverse">&darr;</button>
+          <input type="text" class="filter__find" placeholder="Найти карточку">
+      </div>
+      <p class="filter__count"></p>
+    </div>
+
+    <div class="places-list root__section">
+
+    </div>
+
+<!-- Всплывающее окно: добавление нового места -->
+    
+<div class="popup popup_place">
+  <div class="popup__content">
+    <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+    <h3 class="popup__title">Новое место</h3>
+    <form class="popup__form" name="new">
+        <input type="text" name="name" class="popup__input" placeholder="Название">
+        <span class="popup__error"></span>
+        <input type="text" name="link" class="popup__input" placeholder="Ссылка на картинку">
+        <span class="popup__error"></span>
+        <button type class="button popup__button popup-place__button">
+          <span class="button_default">+</span>
+          <span class="button_loading">Загрузка...</span>
+        </button>
+    </form>
+  </div>
+</div>
+
+<!-- Всплывающее окно: редактирование профиля -->
+
+<div class="popup popup-user">   
+  <div class="popup-user__content">
+    <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup-user__close">
+    <h3 class="popup-user__title">Редактировать профиль</h3>
+    <form class="popup-user__form" name="userinfo">
+      <input type="text" name="name" class="popup-user__input" placeholder="Имя">
+      <span class="popup__error"></span>
+      <input type="text" name="profession" class="popup-user__input" placeholder="О себе">
+      <span class="popup__error"></span>
+      <button type class="button popup__button popup-user__button">
+          <span class="button_default">Сохранить</span>
+          <span class="button_loading">Загрузка...</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Всплывающее окно: изменение аватара -->
+
+<div class="popup popup-avatar">   
+  <div class="popup-user__content">
+    <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup-user__close">
+    <h3 class="popup-user__title">Обновить аватар</h3>
+    <form class="popup-user__form" name="useravatar">
+      <input type="text" name="link" class="popup-user__input" placeholder="Ссылка на аватар">
+      <span class="popup__error"></span>
+      <button type class="button popup__button popup-user__button popup-avatar__button">
+          <span class="button_default">Сохранить</span>
+          <span class="button_loading">Загрузка...</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Всплывающее окно: увеличение картинки -->
+
+<div class="popup popup-image">
+  <div class="popup-image__content">
+      <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup-image__close">
+    <img alt="Place image" class="popup-image__image">
+    
+  </div>
+</div>
+
+</div>
+
+<script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+
+</body>
+</html>

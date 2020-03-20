@@ -1,0 +1,19 @@
+.user-info__edit-button {
+  padding: 3px 10px;
+  background: none;
+  color:#fff;
+  margin: 20px 0 0 0;
+  font-size: 12px;
+  cursor: pointer;
+  transition:.2s;
+}
+
+.user-info__edit-button:hover {
+  background: #fff;
+  color:#222;
+}
+
+.user-info__edit-button:active {
+  background: blue;
+  color:#222;
+}
