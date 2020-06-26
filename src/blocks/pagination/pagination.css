@@ -1,0 +1,21 @@
+.pagination {
+    color: #fff;
+    display: flex;
+    max-width: calc(100% - 400px);
+    margin: 20px auto;
+}
+
+.pagination__load-more {
+    margin: 25px auto;
+    border-radius: 15px;
+    padding: 15px 25px;
+    color: #eee;
+    border: solid 1px #eee;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 414px) {
+    .pagination {
+        max-width: calc(100% - 140px);
+    }
+}

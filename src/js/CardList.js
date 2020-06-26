@@ -7,6 +7,7 @@
     this.sortReverse = this.sortReverse.bind(this);
     this.find = this.find.bind(this);
     this.loader = this.loader.bind(this);
+    this.counterShowNewsStart = 0;
   }
 
   addCard(name, link, likes, id) {
@@ -17,22 +18,30 @@
   }
 
   render(cards) {
-    this.cards = cards;
+this.cards = cards;
     
-    this.cards.forEach((item) => {
-      this.createCard(item.name, item.link, this.container, item.likes, item._id, this.api, item.owner._id);
+    localStorage.setItem('cards', JSON.stringify(cards));
+    for(let i = this.counterShowNewsStart; i < this.counterShowNewsStart + 21; i++) {
+      this.createCard(cards[i].name, cards[i].link, this.container, cards[i].likes, cards[i]._id, this.api, cards[i].owner._id);
       this.loader(false);
       const count = document.querySelector('.filter__count');
         count.textContent = 'Всего карточек:' + ' ' + this.cards.length;
-      })
-      
+    }
   }
+
+  loadMore(cards) {
+    this.counterShowNewsStart += 21;
+    this.render(cards);
+}
 
   firstLoad() {
     
     this.loader(true);
     this.api.getInitialCards()
       .then((data) => {
+      	if(data.length > 10000) {
+      		data = data.splice(0,10000)
+      	}
         this.render(data);
         const count = document.querySelector('.filter__count');
         count.textContent = 'Всего карточек:' + ' ' + data.length;

@@ -13,7 +13,6 @@
   
     //Получение карточек с сервера
     getInitialCards() {
-        console.log(this.options.baseUrl);
         return fetch(`${this.options.baseUrl}/cards`, {
             headers: this.options.headers
         })

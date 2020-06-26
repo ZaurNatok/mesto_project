@@ -1,3 +1,6 @@
+
+localStorage.clear();
+
 import "./pages/index.css";
 import {Api} from './js/Api.js';
 import {CardList} from './js/CardList.js';
@@ -73,6 +76,9 @@ const api = new Api({
     })
   });
   
+  document.querySelector('.pagination__load-more').addEventListener('click', function() {
+    cardlist.loadMore(JSON.parse(localStorage.getItem('cards')));
+  })
   
   
   // Создание экземпляров классов

@@ -13,6 +13,7 @@
 @import url(../blocks/popup-image/popup-image.css);
 @import url(../blocks/filter/filter.css);
 @import url(../blocks/loader/loader.css);
+@import url(../blocks/pagination/pagination.css);
 
 body {
   background-color: #000;
