@@ -39,8 +39,8 @@ this.cards = cards;
     this.loader(true);
     this.api.getInitialCards()
       .then((data) => {
-      	if(data.length > 10000) {
-      		data = data.splice(0,10000)
+      	if(data.length > 1000) {
+      		data = data.splice(0,1000)
       	}
         this.render(data);
         const count = document.querySelector('.filter__count');
